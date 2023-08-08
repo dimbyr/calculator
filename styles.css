@@ -1,0 +1,63 @@
+body {
+    margin: 5% 30%;
+}
+.container {
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 400px;
+    padding: 35px 35px 0px 35px;
+    border: 5px solid blue;
+    border-radius: 5%;
+}
+
+.screen {
+    text-align: right;
+    background-color: #c0c0c0;
+    border: 3px solid rgb(77, 70, 70);
+    width: 400px;
+    height: 80px;  
+    margin: 0px;
+    font-size: 50px;
+    font-family:'Courier New', Courier, monospace;
+}
+
+.buttonsContainer {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin: 35px;
+}
+
+.buttonRow {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.button {
+    width: 80px;
+    height: 80px;
+    margin: 10px;
+    border-radius: 15%;
+    font-size: 50px;
+}
+
+/* 
+.clear {
+    background-color: red;
+} */
+
+.equalButton {
+    width: 180px;
+    height: 80px;
+    margin: 10px;
+    font-size: 50px;
+    background-color: #0F0;
+    border-radius: 10%;
+}
