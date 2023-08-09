@@ -40,6 +40,14 @@ body {
     align-items: center;
 }
 
+.clearButton {
+    width: 80px;
+    height: 80px;
+    margin: 10px;
+    border-radius: 15%;
+    font-size: 50px;
+}
+
 .button {
     width: 80px;
     height: 80px;
