@@ -15,6 +15,7 @@ body {
 
 .screen {
     text-align: right;
+    overflow: hidden;
     background-color: #c0c0c0;
     border: 3px solid rgb(77, 70, 70);
     width: 400px;
