@@ -20,6 +20,11 @@ buttons.forEach((element) => {
                 e.target.style["background-color"] = "#FFFFFF"
             }
     );
+    element.addEventListener("mouseout", 
+    (e)=> { 
+            e.target.style["background-color"] = "#FFFFFF"
+        }
+);
     
     element.addEventListener("click",
         (e) => {
