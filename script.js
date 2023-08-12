@@ -1,14 +1,27 @@
 const screen = document.querySelector("#screen");
-const buttons = document.querySelectorAll(".button");
+const buttons = document.querySelectorAll("button.num");
 const clearButton = document.querySelector(".clearButton");
+const OPERATORS = ["+", "-", "x", "/", "%"];
+const operatorButtons = document.querySelectorAll(".operator");
+const deleteButton = document.querySelector(".delete");
 
-let screenContent = ""
+
+let screenContent = 0;
+let operation = [];
 
 clearButton.addEventListener("click", () => {
-    screen.textContent = "0";
-    screenContent = "";
+    screen.textContent = 0;
+    screenContent = 0;
+    operation = [];
 })
 
+deleteButton.addEventListener(
+    "click",
+    () => { 
+        screenContent = Math.floor(screenContent/10);
+        screen.textContent = screenContent;    
+        }
+)
 buttons.forEach((element) => { 
     element.addEventListener("mousedown", 
         (e) =>{ 
@@ -28,17 +41,30 @@ buttons.forEach((element) => {
     
     element.addEventListener("click",
         (e) => {
-            screenContent += `${e.target.value}`;
-            if (screenContent.length < 13){
+            screenContent = 10*Number(screenContent) + Number(e.target.value);
+            if (true){
             screen.textContent = screenContent;
             };
         })
 });
 
-
-
-
-
+operatorButtons.forEach(
+    elt => elt.addEventListener(
+        "click",
+        e => {
+            if (screenContent){
+            operation.push(screenContent);
+            screenContent = 0};
+            let op = operation[operation.length -1];
+            if (!OPERATORS.includes(op)){
+                operation.push(e.target.value);
+            } else {
+                operation[operation.length -1] = e.target.value;
+            }
+            console.log(operation);
+        }
+    )
+);
 
 
 function add(x,y){
