@@ -67,6 +67,18 @@ body {
     height: 80px;
     margin: 10px;
     font-size: 50px;
-    background-color: #0F0;
+    background-color:  #749732;
     border-radius: 10%;
+}
+
+.operator {
+    background-color: #749732;
+}
+
+.clearButton {
+    background-color: #a06d54;
+}
+
+.delete {
+    background-color: #a06d54;
 }
