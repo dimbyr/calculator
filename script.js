@@ -56,9 +56,7 @@ buttons.forEach((element) => {
         (e) => {
             equalButton.disabled = false;
             screenContent = screenContent + e.target.value;
-            if (true){
             screen.textContent = screenContent;
-            };
             if (screenContent.includes(".") || screenContent == ""){
                 commaButton.disabled = true;
             }
