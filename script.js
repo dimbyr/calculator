@@ -124,7 +124,7 @@ function compute (){
     } ;
 }
 
-function operate(firstNumber = 0, secondNumber = 0, op = "+"){
+function operate(firstNumber, secondNumber, op){
     switch(op){
         case "+":
             return add(firstNumber, secondNumber);
