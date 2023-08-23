@@ -1,8 +1,18 @@
 body {
     margin: 5% 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
 }
+
+header, main, footer {
+    flex: 1;
+}
+
 .container {
     background-color: black;
+    flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -82,3 +92,17 @@ body {
 .delete {
     background-color: #a06d54;
 }
+
+
+@media (max-width: 600px) {
+    
+    body, main {
+        margin: 0;
+        padding: 0;
+    }
+    .container {
+        width: 80%;
+        margin: 0;
+        padding: 10%
+    }
+  }
