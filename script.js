@@ -6,30 +6,42 @@ const deleteButton = document.querySelector(".delete");
 const commaButton = document.querySelector(".comma");
 const equalButton = document.querySelector(".equalButton");
 const OPERATORS = ["+", "-", "x", "/", "%", "="];
+deleteButton.disabled = true;
+let operatorTracker = false; // This will switch to true if an operator button is hit
 
+// STATUS OF THE CALCULATOR
 let state = {
     numberOne: 0,
     ope: "+", 
     numberTwo: 0, 
+    queue: "",
     result: function() {
         return operate(this.numberOne, this.numberTwo, this.ope);
         },
-    queue: ""
+    reset: function() {
+        this.numberOne = 0;
+        this.ope = "+";
+        this.numberTwo = 0;
+        this.queue = "";
+    }
     };
 
+// CLEAR BUTTON EVENTS
 clearButton.addEventListener("click", () => {
-    screen.textContent = 0;
-    state.numberOne = 0;
-    state.numberTwo = 0;
-    state.ope = "+";
-    state.queue = "";
+    screen.textContent = "0";
+    state.reset();
     commaButton.disabled = false;
-    console.table(state);
+    deleteButton.disabled = true;
 });
 
+//BACKSPACE BUTTON EVENTS
 deleteButton.addEventListener(
     "click",
     () => {
+        if (state.queue[(state.queue).length - 1] == "="){
+            state.reset();
+            screen.textContent = "0";
+        }
         let currentScreenContent = screen.textContent;
         if (Number(currentScreenContent)){
             currentScreenContent = currentScreenContent.slice(0,-1);
@@ -47,17 +59,21 @@ deleteButton.addEventListener(
         // operate on current state  
         state.queue = state.queue.slice(0,-1);
         state.numberTwo = Number(screen.textContent);
-        console.table(state);
+        // console.table(state);
         }
 );
 
-let operatorTracker = false;
-// numerical buttons
+// NUMERICAL BUTTONS EVENTS
 buttons.forEach((element) => { 
     element.addEventListener("click",
         (e) => {
             let onScreen  = screen.textContent;
-            if (Number(onScreen) == 0 || operatorTracker){
+            if (state.queue[(state.queue).length - 1] == "="){
+                onScreen = "0";
+                state.reset();
+                //console.table(state);
+            }
+            if ((Number(onScreen) == 0 && !onScreen.includes(".") ) || operatorTracker){
                 onScreen = e.target.value;
             }
             else {
@@ -69,8 +85,9 @@ buttons.forEach((element) => {
             };
             state.numberTwo = Number(onScreen);
             state.queue += e.target.value;
-            console.table(state);
+            // console.table(state);
             operatorTracker = false;
+            deleteButton.disabled = false;
     });
     element.addEventListener("mousedown", 
         (e) =>{ 
@@ -89,35 +106,32 @@ buttons.forEach((element) => {
     );
 });
 
+// OPERATOR BUTTONS EVENTS
 operatorButtons.forEach(
     elt => elt.addEventListener(
         "click",
         e => {
             commaButton.disabled = false; //unlock the comma button
             let currentOp = e.target.value;
-            let firstNumber = Number(screen.textContent);
-            let lastHit = state.queue[state.queue.length - 1];
-            if (OPERATORS.includes(lastHit)){
-                // Don't do anything but replace the operator
-            } else {
+            if (!operatorTracker){
                 state.numberOne = state.result();
-                state.numberTwo = firstNumber;
+                state.numberTwo = Number(screen.textContent);
             }
             screen.textContent = state.numberOne;
             state.ope = currentOp;
             state.queue = updateQ(state.queue, currentOp);
+            deleteButton.disabled = true;
             operatorTracker = true;
-            console.table(state);
+            // console.table(state);
          }
     )
 );
 
+// EQUAL BUTTON EVENTS
 equalButton.addEventListener(
     "click",
     () => {
-        let lastPressed = state.queue[state.queue.length - 1];
-
-        if (OPERATORS.includes(lastPressed)){
+        if (operatorTracker){
             screen.textContent = state.numberOne;
         }
         else
@@ -126,11 +140,12 @@ equalButton.addEventListener(
             state.numberOne = state.result();
         }
         state.queue = updateQ(state.queue, "=");
+        deleteButton.disabled = true;
         operatorTracker = true;
-        console.table(state);
     }
 )
 
+// UPDATING THE QUEUE
 function updateQ (string, hit){
     let lastChar = string[string.length -1];
     if (OPERATORS.includes(lastChar)){
@@ -141,6 +156,7 @@ function updateQ (string, hit){
     return string;
 }
 
+// OPERATIONS
 function operate(firstNumber, secondNumber, op){
     switch(op){
         case "+":
