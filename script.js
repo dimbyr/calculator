@@ -6,8 +6,10 @@ const deleteButton = document.querySelector(".delete");
 const commaButton = document.querySelector(".comma");
 const equalButton = document.querySelector(".equalButton");
 const OPERATORS = ["+", "-", "x", "/", "%", "="];
+screen.textContent = "0";
 deleteButton.disabled = true;
 let operatorTracker = false; // This will switch to true if an operator button is hit
+
 
 // STATUS OF THE CALCULATOR
 let state = {
