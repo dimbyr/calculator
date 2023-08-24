@@ -106,6 +106,7 @@ header, main, footer {
         justify-content: flex-end;
     }
     header, main, footer {
+        text-align: center;
         width: 100vw;
         margin: 0%;
         padding: 0;
@@ -131,15 +132,15 @@ header, main, footer {
     }
     
     .clearButton {
-        width: 24vw;
+        width: 25vw;
     }
     
     .button {
-        width: 24vw;
+        width: 25vw;
     }
     
     .equalButton {
-        width: 50vw;
+        width: 55vw;
     }
     
 
