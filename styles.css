@@ -9,11 +9,11 @@ body {
 
 header, main, footer {
     flex: 1;
-    margin: 0% 30%;
+    margin: 0% 25%;
 }
 
 .container {
-    background-color: black;
+    background-color: rgb(230, 224, 148);
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -22,6 +22,7 @@ header, main, footer {
     /* width: 400px; */
     width: 90%;
     padding: 9%;
+    margin-top: 15%;
     border: 1% solid blue;
     border-radius: 5%;
 }
@@ -58,15 +59,15 @@ header, main, footer {
 .clearButton {
     width: 80px;
     height: 80px;
-    margin: 10px;
+    margin: 5px;
     border-radius: 15%;
-    font-size: 50px;
+    font-size: 40px;
 }
 
 .button {
     width: 80px;
     height: 80px;
-    margin: 10px;
+    margin: 5px;
     border-radius: 15%;
     font-size: 50px;
 }
@@ -79,7 +80,7 @@ header, main, footer {
 .equalButton {
     width: 180px;
     height: 80px;
-    margin: 10px;
+    margin: 5px;
     font-size: 50px;
     background-color:  #749732;
     border-radius: 10%;
@@ -97,6 +98,12 @@ header, main, footer {
     background-color: #a06d54;
 }
 
+.backspacetext {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
 @media screen and (max-width: 821px) and (min-width: 350px) {
     body{
