@@ -7,7 +7,7 @@ const commaButton = document.querySelector(".comma");
 const equalButton = document.querySelector(".equalButton");
 const OPERATORS = ["+", "-", "x", "/", "%", "="];
 screen.textContent = "0";
-deleteButton.disabled = true;
+// deleteButton.disabled = true;
 let operatorTracker = false; // This will switch to true if an operator button is hit
 
 
@@ -33,7 +33,7 @@ clearButton.addEventListener("click", () => {
     screen.textContent = "0";
     state.reset();
     commaButton.disabled = false;
-    deleteButton.disabled = true;
+    deleteButton.disabled = false;
 });
 
 //BACKSPACE BUTTON EVENTS
