@@ -103,6 +103,7 @@ header, main, footer {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 0px;
 }
 
 @media screen and (max-width: 821px) and (min-width: 350px) {
