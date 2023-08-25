@@ -129,7 +129,7 @@ header, main, footer {
     .screen {
         width: 90vw;
         height: 85px;  
-        margin: 0;
+        margin-bottom: 20px;
         font-size: 50px;
     }
     
