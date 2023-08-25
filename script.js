@@ -7,7 +7,6 @@ const commaButton = document.querySelector(".comma");
 const equalButton = document.querySelector(".equalButton");
 const OPERATORS = ["+", "-", "x", "/", "%", "="];
 screen.textContent = "0";
-// deleteButton.disabled = true;
 let operatorTracker = false; // This will switch to true if an operator button is hit
 
 
@@ -61,7 +60,6 @@ deleteButton.addEventListener(
         // operate on current state  
         state.queue = state.queue.slice(0,-1);
         state.numberTwo = Number(screen.textContent);
-        // console.table(state);
         }
 );
 
@@ -73,7 +71,6 @@ buttons.forEach((element) => {
             if (state.queue[(state.queue).length - 1] == "="){
                 onScreen = "0";
                 state.reset();
-                //console.table(state);
             }
             if ((Number(onScreen) == 0 && !onScreen.includes(".") ) || operatorTracker){
                 onScreen = e.target.value;
@@ -87,7 +84,6 @@ buttons.forEach((element) => {
             };
             state.numberTwo = Number(onScreen);
             state.queue += e.target.value;
-            // console.table(state);
             operatorTracker = false;
             deleteButton.disabled = false;
     });
@@ -124,7 +120,6 @@ operatorButtons.forEach(
             state.queue = updateQ(state.queue, currentOp);
             deleteButton.disabled = true;
             operatorTracker = true;
-            // console.table(state);
          }
     )
 );
