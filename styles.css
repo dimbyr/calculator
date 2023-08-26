@@ -139,11 +139,7 @@ header, main, footer {
         margin: 0%;
     }
     
-    .clearButton {
-        width: 25vw;
-    }
-    
-    .button {
+    .clearButton, .button {
         width: 25vw;
     }
     
@@ -151,9 +147,9 @@ header, main, footer {
         width: 55vw;
     }
     
-
-  }
-
+    .button:hover {
+        filter: invert(100%);
+    }
   
 @media (max-width: 350px) {
     body{
