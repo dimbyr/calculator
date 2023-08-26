@@ -68,6 +68,7 @@ header, main, footer {
     width: 80px;
     height: 80px;
     margin: 5px;
+    border: 0px black solid;
     border-radius: 15%;
     font-size: 50px;
 }
