@@ -185,15 +185,11 @@ header, main, footer {
         margin: 0%;
     }
     
-    .clearButton {
+    .button, .clearButton {
         width: 60px;
         height: 60px;
     }
     
-    .button {
-        width: 60px;
-        height: 60px;
-    }
     
     .equalButton {
         width: 130px;
