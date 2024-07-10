@@ -14,48 +14,36 @@
     <div class="container">
         <div id ="screen" class = "screen">
         </div>
-        <div class = "buttonsContainer">
-            <div class="buttonRow">
-                <button class="button clearButton"> AC </button>
-                <button class="button delete" > 
-                    <div class="backspacetext">
-                        <div style="font-size: 40%; margin: 0; padding: 0;">
-                            <strong>Delete</strong>
-                        </div>
-                        <div style="font-size: 80%; margin: 0; padding: 0;">
-                            <strong> &#8592</strong> 
-                        </div>
-                    </div>
-                </button>
-                <button class="button operator floorDiv" value = "%"> % </button>
-                <button class="button operator divide"  value = "/" > / </button>
+        <button class="button clearButton" id="ac"> AC </button>
+        <button class="button delete" id="del" > 
+            <div class="backspacetext">
+                <div style="font-size: 40%; margin: 0; padding: 0;">
+                    <strong>Delete</strong>
+                </div>
+                <div style="font-size: 80%; margin: 0; padding: 0;">
+                    <strong> &#8592</strong> 
+                </div>
             </div>
-            <div class="buttonRow">
-                <button class="button num" value = 7 > 7 </button>
-                <button class="button num" value = 8 > 8 </button>
-                <button class="button num "value = 9 > 9 </button>
-                <button class="button operator multiply"  value = "x"> x </button>
-            </div>
-            <div class="buttonRow">
-                <button class="button num" value = 4 > 4 </button>
-                <button class="button num" value = 5 > 5 </button>
-                <button class="button num" value = 6 > 6 </button>
-                <button class="button operator minus"  value = "-"> - </button>
-            </div>
-            <div class="buttonRow">
-                <button class="button num" value = 1 > 1 </button>
-                <button class="button num" value = 2 > 2 </button>
-                <button class="button num" value = 3 > 3 </button>
-                <button class="button operator plus" value = "+"> + </button>
-            </div>
-            <div class="buttonRow">
-                <button class="button num zero" value = 0> 0 </button>
-                <button class="button num comma" value = "."> . </button>
-                <button class="button equalButton" value = "="> = </button>
-            </div>
-        </div>
+        </button>
+        <button class="button operator floorDiv" id ="floorDiv" value = "%"> % </button>
+        <button class="button operator divide" id="divide" value = "/" > / </button>
+        <button class="button num" id="seven" value = 7 > 7 </button>
+        <button class="button num" id="eight" value = 8 > 8 </button>
+        <button class="button num " id = "nine" value = 9 > 9 </button>
+        <button class="button operator multiply" id="multiply"  value = "x"> x </button>
+        <button class="button num" id="four" value = 4 > 4 </button>
+        <button class="button num" id="five" value = 5 > 5 </button>
+        <button class="button num" id="six" value = 6 > 6 </button>
+        <button class="button operator minus" id="minus" value = "-"> - </button>
+        <button class="button num" id="one" value = 1 > 1 </button>
+        <button class="button num" id="two" value = 2 > 2 </button>
+        <button class="button num" id="three" value = 3 > 3 </button>
+        <button class="button operator plus" id="plus" value = "+"> + </button>
+        <button class="button num zero" id="zero" value = 0> 0 </button>
+        <button class="button num comma" id = "comma" value = "."> . </button>
+        <button class="button equalButton" id="equal" value = "="> = </button>
     </div>
 </main>
-<footer><p> &copy; Dimby </p></footer>
+<footer><p> &copy; Dimby 2024</p></footer>
 </body>
 </html>
