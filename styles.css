@@ -56,13 +56,13 @@ header, main, footer {
     align-items: center;
 }
 
-.clearButton {
+/* .clearButton {
     width: 80px;
     height: 80px;
     margin: 5px;
     border-radius: 15%;
     font-size: 40px;
-}
+} */
 
 .button {
     width: 80px;
@@ -70,14 +70,14 @@ header, main, footer {
     margin: 5px;
     border: 0px black solid;
     border-radius: 15%;
-    font-size: 50px;
+    font-size: 40px;
 }
 
 .equalButton {
     width: 180px;
     height: 80px;
     margin: 5px;
-    font-size: 50px;
+    font-size: 40px;
     background-color:  #749732;
     border-radius: 10%;
 }
@@ -86,12 +86,7 @@ header, main, footer {
     background-color: #749732;
 }
 
-.clearButton {
-    background-color: #a06d54;
-    font-size: 30px;
-}
-
-.delete {
+.clearButton, .delete {
     background-color: #a06d54;
 }
 
